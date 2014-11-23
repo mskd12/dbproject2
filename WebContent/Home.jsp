@@ -4,7 +4,7 @@
    "http://www.w3.org/TR/html4/strict.dtd">
 <style>
 #ohmygod {
-    background-color: #ccc;
+    background-color: blue;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius:6px;
@@ -18,58 +18,66 @@
 
 #ohmygod:hover {
     border: none;
-    background:red;
+    background:blue;
     box-shadow: 0px 0px 1px #777;
 }
 </style>
 <HTML>
    <HEAD>
       <TITLE>Food Panda</TITLE>
+      
    </HEAD>
-   <BODY>
+   <body>
+   <div style="width:60%; margin:0 auto;text-align:center;">
+   <h1>NOW ORDER FOOD AT YOUR DOORSTEPS!!!!</h1>
+   </div>
+<div style="float:left;padding: 10%;">
 
-LOGIN
+
+<table>
+<th>LOGIN</th>
 <form action="FOS" method="post">
-<input type="radio" name="SellerOrUser" value="Seller" checked>Seller
-<input type="radio" name="SellerOrUser" value="User">User<br/>
-Please enter Username and Password <br/>
-<input type="text" name="Username"size="20px" >
-<input type="password" name="Password" size="20px">
+<tr><td><input type="radio" name="SellerOrUser" value="Seller" checked>Seller</td>
+<td><input type="radio" name="SellerOrUser" value="User">User<br/></td></tr>
+
+ <tr><td>Username </td><td><input type="text" name="Username"size="20px" ></td></tr>
+<tr><td>Password</td><td><input type="password" name="Password" size="20px"></td></tr>
+
 <input type="hidden" name="from" value = "2">
-<input type="submit" name="submitvalue" value="login" id="ohmygod">
+<tr><td align = "center"><input type="submit" name="submitvalue" value="login" id="ohmygod"></td></tr>
 </form>
-
-SIGN UP
+</table>
+</div>
+<div style="float:right;padding: 10%;">
+<table>
+<th>SIGN UP</th>
 <form action="FOS" method="post">
-<input type="radio" name="SellerOrUser" value="Seller" checked>Seller
-<input type="radio" name="SellerOrUser" value="User">User<br/>
-Please enter Username and Password and Address <br/>
-
-username:
+<tr><td><input type="radio" name="SellerOrUser" value="Seller" checked>Seller</td>
+<td><input type="radio" name="SellerOrUser" value="User">User</td>
+<tr><td>
+Username</td><td>
 <input type="text" name="Username"size="60px">
-</br>
-</br>
-</br>
-Address:
-
+</td>
+</tr>
+<tr><td>
+Address
+</td><td>
 <input type="text" name="Address" size="60px">
-</br>
-</br>
-</br>
-Name:
-
+</td></tr>
+<tr><td>
+Name
+</td><td>
 <input type="text" name="Name" size="60px">
-<br>
-<br>
-Password:
-
+</td></tr>
+<tr><td>
+Password
+</td><td>
 <input type="password" name="Password" size="60px">
-</br>
-</br>
-</br>
+</td></tr>
 <input type="hidden" name="from" value = "2">
-<input type="submit" name="submitvalue" value="signup" id="ohmygod">
+<tr><td align="right"><input type="submit" name="submitvalue" value="signup" id="ohmygod"></td></tr>
 </form>
-
+</table>
+</div>
    </BODY>
 </HTML>

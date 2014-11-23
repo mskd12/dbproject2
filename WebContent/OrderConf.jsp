@@ -4,10 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Order Page</title>
+<title>Order Confirmation page</title>
 </head>
 <body>
-
 <%String UserData = request.getAttribute("UserData").toString();
 String ArrayUser[] = UserData.split("@");%>
 
@@ -22,6 +21,7 @@ String ArrayUser[] = UserData.split("@");%>
 
 <h1>welcome <%out.println(ArrayUser[1]); %></h1>
 <h2>your wallet contains <%out.println(ArrayUser[2]); %></h2>
+
 <%
 String ItemData = request.getAttribute("ItemData").toString();
 String ItemDataArray[] = ItemData.split("//");
@@ -29,31 +29,9 @@ String SellerData = request.getAttribute("SellerData").toString();
 String SellerDataArray[] = SellerData.split("@");
 %>
 
-<div style="float:left">
-<h3>please select your cuisine and order</h3>
-<form action="FOS" method ="post">
-  <input type="checkbox" name="1" value="abc"> North Indian<br>
-  <input type="checkbox" name="2" value="abc" > Chinese<br>
-  <input type="checkbox" name="3" value="abc"> South Indian<br>
-  <input type="checkbox" name="4" value="abc"> Veg<br>
-  <input type="checkbox" name="5" value="abc"> Non Veg<br>
-  <input type = "hidden" name = "UserId" value = <% out.println(ArrayUser[0]); %>>
-  <input type = "hidden" name = "SellerId" value = <% out.println(SellerDataArray[0]); %>>
-  <input type="hidden" name="from" value = "4">
-  <input type="submit" value="Submit">
-</form>
-
-<a href = "/FOS/FOS?from=4&uid=<%out.println(ArrayUser[0]); %>"> Back to your Homepage</a>
-</div>
-
-
-<div style="float:right;padding-right:10%;">
 <h3> Items of <%out.println(SellerDataArray[1]); %></h3>
 <div style="width:100%;background:#F9EECF;border:1px dotted black;text-align:center;">
-<form action="FOS">
-<input type="hidden" name="from" value = "25">
-<input type = "hidden" name = "UserId" value = <% out.println(ArrayUser[0]); %>>
-<input type = "hidden" name = "SellerId" value = <% out.println(SellerDataArray[0]); %>>  
+
 <TABLE BORDER="1" CELLPADDING="3" CELLSPACING="1">
 	<TR>
         <TH>Name</TH>
@@ -61,6 +39,7 @@ String SellerDataArray[] = SellerData.split("@");
         <TH>Expected time</TH>
         <TH>veg or non veg</TH>
         <TH>cuisine</TH>
+        <TH>Quantity</TH>
     </TR>
 
 <%
@@ -76,26 +55,22 @@ for(String s : ItemDataArray)
         <TD><%=ItemArray[3] %></TD>
         <TD><%=ItemArray[5] %></TD>
         <TD><%=ItemArray[6] %></TD>
-        <TD><select name="Quantity">
-  <option value="0">0</option>      
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option></select>
-  <input type="checkbox" name = "itemid" value = <%out.println(ItemArray[0]); %>>
-</TD>
-    </TR>
-
-</a>
-</div>
+        <TD><%=ItemArray[7] %></TD>
+	</TR>
 
 <%}%>
 </TABLE>
-<input type="submit" name="submitvalue" value="Submit">
-
-</form>
 </div>
+<FORM action="FOS">
+<input type = "hidden" name = "UserData" value = <% out.println(UserData); %>>
+<input type = "hidden" name = "SellerData" value = <% out.println(SellerData); %>>
+<input type = "hidden" name = "ItemData" value = <% out.println(ItemData); %>>
+<input type = "hidden" name = "from" value = "13">
+<input type="submit" name="submitvalue" value="Submit">
+</FORM>
 
-
+<a href="/FOS/FOS?from=3&UserData=<%= UserData %>&SellerData=<%=SellerData %>">
+ Change the order
+ </a>
 </body>
 </html>

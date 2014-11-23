@@ -8,7 +8,5 @@
 </head>
 <body>
 
-<h1><%=request.getParameter("name") %></h1>
-
 </body>
 </html>

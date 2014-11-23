@@ -11,7 +11,7 @@
 String ArrayUser[] = DataUser.split("@");%>
 <div style="width:100%;height = 50px;background:#F9EECF;border:1px dotted black;">
 <center>
-<a href="Wallet.jsp"><div style="width:20%;height = 50px;background:#F9EECF;border:1px dotted black;float:left;">wallet</div></a>
+<a href="/FOS/Wallet.jsp?UserData=<%out.println(DataUser); %>"><div style="width:20%;height = 50px;background:#F9EECF;border:1px dotted black;float:left;">wallet</div></a>
 <a href="editdetails"><div style="width:20%;height = 50px;background:#F9EECF;border:1px dotted black;float:left;">edit details</div></a>
 <a href="svag"><div style="width:20%;height = 50px;background:#F9EECF;border:1px dotted black;float:left;">history</div></a>
 <a href="Home.jsp"><div style="width:20%;height = 50px;background:#F9EECF;border:1px dotted black;float:left;">Logout</div></a>
